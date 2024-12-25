@@ -3,7 +3,7 @@ import os
 
 class JobSearchBot:
     def __init__(self):
-        self.groq_client = Groq(api_key='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')  # Ensure to set the environment variable
+        self.groq_client = Groq(api_key='gsk_moTKAED8kmrCFtrIUCmEWGdyb3FYNAFaTeLXkH1wTVlO6Mo0rIiXmUim')  
 
     def search_jobs(self, query):
         prompt = f"""Find 5 relevant jobs based on this search: {query}
