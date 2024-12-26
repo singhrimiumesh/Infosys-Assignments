@@ -1,4 +1,5 @@
 from groq import Groq
+import gradio as gr
 import os
 
 class JobSearchBot:
@@ -24,17 +25,22 @@ class JobSearchBot:
         
         return response.choices[0].message.content
 
-    def chat_loop(self):
-        print("Job Search Bot (type 'exit' to quit)")
-        while True:
-            query = input("\nWhat jobs are you looking for? (Include skills/location): ")
-            
-            if query.lower() == 'exit':
-                print("\nGoodbye!")
-                break
-                
-            results = self.search_jobs(query)
-            print("\nTop 5 Matches:\n" + results)
+def job_search_interface(query):
+    bot = JobSearchBot()
+    results = bot.search_jobs(query)
+    return results
 
-bot = JobSearchBot()
-bot.chat_loop()
+# Gradio Interface
+def main():
+    interface = gr.Interface(
+        fn=job_search_interface,
+        inputs=gr.Textbox(placeholder="Enter job search query (e.g., 'Frontend developer in New York')", label="Job Search Query"),
+        outputs=gr.Markdown(label="Job Results"),
+        title="Job Search Bot",
+        description="Enter your desired job role, skills, and location to find the top 5 matches in markdown format.",
+        allow_flagging="never" 
+    )
+    interface.launch()
+
+if __name__ == "__main__":
+    main()
