@@ -47,10 +47,6 @@ pip install -r requirements.txt
 
 ---
 
-## Author
-[Rimi Singh](https://github.com/singhrimiumesh)
-
----
 
 ## Acknowledgments
 - Groq Cloud API for the chatbot functionality.
