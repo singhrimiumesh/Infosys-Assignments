@@ -1,6 +1,5 @@
 # Scrape & Chat Bot
 
-## Overview
 **Scrape & Chat Bot** is a Python-based application that scrapes data from a given website and uses an AI-powered chatbot to answer user queries based on the scraped content. It provides a simple GUI interface for scraping websites and interacting with the chatbot.
 
 ---
@@ -56,6 +55,3 @@ pip install -r requirements.txt
 ## Acknowledgments
 - Groq Cloud API for the chatbot functionality.
 - Selenium and WebDriver Manager for simplifying web scraping.
-
----
-
