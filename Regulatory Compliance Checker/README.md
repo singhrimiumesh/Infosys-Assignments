@@ -1,2 +1,13 @@
-#Contract Law Extraction Script
-This Python script processes a dataset containing contract data and extracts the exact law and a brief description of each contract using the Groq API. The script reads a CSV file (dataset.csv) into a Pandas DataFrame, ensuring that the necessary columns (Exact Law and Description) exist. For each contract entry, it sends a request to the Groq API to analyze the contract text and retrieve relevant legal information. The API response is then parsed to extract the exact law and its description, which are added to the dataset. A rate-limiting mechanism handles API restrictions by implementing a retry mechanism when necessary. Finally, the updated dataset is saved as Dataset.csv. This automation streamlines contract analysis by leveraging AI for legal text processing.
+Contract Law Extraction Script
+
+This Python script processes a dataset containing contract data and extracts the exact law and a brief description of each contract using the Groq API. The script follows these steps:
+
+Load the Dataset: Reads the dataset.csv file into a Pandas DataFrame and ensures the necessary columns (Exact Law and Description) exist.
+
+API Integration: Uses the Groq API to analyze each contract and determine the exact legal reference and a short description.
+
+Handling API Rate Limits: Implements a retry mechanism to handle rate limit errors by waiting before retrying requests.
+
+Data Processing: Iterates through each row in the dataset, sends contract text to the API, and updates the DataFrame with extracted legal details.
+
+Save Updated Data: The processed dataset is saved as Dataset.csv, ensuring the extracted legal insights are stored for further analysis.
